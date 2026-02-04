@@ -946,30 +946,51 @@
     /* Pre-assessment responsive */
     @media (max-width: 767px) {
       .pre-assessment-screen {
-        padding-top: 15vh;
+        padding-top: 4.5rem;
+        padding-bottom: 1rem;
+        min-height: auto;
+        height: 100vh;
+        justify-content: center;
+      }
+
+      .screen-headline {
+        margin-bottom: 1.5rem;
       }
 
       .screen-headline h1 {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
+        line-height: 1.25;
+      }
+
+      .screen-body {
+        gap: 1.5rem;
       }
 
       .body-text p,
       .body-text .bullet-item {
-        font-size: 1rem;
+        font-size: 0.9375rem;
+        line-height: 1.5;
+        margin-bottom: 0.75rem;
       }
 
       .screen-visual svg {
-        width: 280px;
-        height: 280px;
+        width: 200px;
+        height: 200px;
       }
 
       .continue-button {
         width: 100%;
         text-align: center;
+        padding: 0.875rem 1.5rem;
       }
 
       .screen-footer {
         align-items: stretch;
+        margin-top: 1.5rem;
+      }
+
+      .auto-advance-hint {
+        font-size: 0.75rem;
       }
     }
 
@@ -1307,8 +1328,17 @@
     @media (max-width: 767px) {
       .min-h-screen.flex.flex-col.justify-center.items-center {
         min-height: auto;
-        padding-top: 5rem;
-        padding-bottom: 3rem;
+        padding-top: 6rem;
+        padding-bottom: 2rem;
+      }
+
+      /* Reduce hero text sizes on mobile */
+      .min-h-screen.flex.flex-col.justify-center.items-center h1 {
+        font-size: 2.5rem !important;
+      }
+
+      .min-h-screen.flex.flex-col.justify-center.items-center .mb-12 {
+        margin-bottom: 2rem !important;
       }
     }
 
@@ -2492,17 +2522,21 @@
 
       .form-section-layout {
         flex-direction: column;
-        gap: 2.5rem;
+        gap: 1.5rem;
         padding: 0 1.5rem;
+        padding-top: 2rem;
+        margin-top: 0;
         text-align: center;
       }
 
       .form-headline-column {
         max-width: 100%;
+        padding: 1rem;
       }
 
       .form-headline {
-        font-size: 2rem;
+        font-size: 1.75rem;
+        line-height: 1.2;
       }
 
       .form-subtext {
@@ -3461,7 +3495,15 @@
       justify-content: center;
       position: relative;
       padding: 2rem;
+      padding-top: 4rem;
       overflow: hidden;
+    }
+
+    @media (max-width: 767px) {
+      .progressive-reveal-screen {
+        padding: 1rem;
+        padding-top: 4rem;
+      }
     }
 
     .reveal-content {
