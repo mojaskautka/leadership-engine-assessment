@@ -1329,7 +1329,7 @@
       .min-h-screen.flex.flex-col.justify-center.items-center {
         min-height: auto;
         padding-top: 6rem;
-        padding-bottom: 2rem;
+        padding-bottom: 4rem;
       }
 
       /* Reduce hero text sizes on mobile */
@@ -3382,8 +3382,12 @@
 
     @media (max-width: 767px) {
       .timeline-preview {
-        padding: 1rem 1rem 6rem;
-        margin-top: -4rem;
+        padding: 2rem 1rem 4rem;
+        margin-top: 0;
+      }
+
+      .timeline-heading {
+        margin-bottom: 2rem;
       }
 
       .timeline-container {
@@ -3502,7 +3506,16 @@
     @media (max-width: 767px) {
       .progressive-reveal-screen {
         padding: 1rem;
-        padding-top: 4rem;
+        padding-top: 5rem;
+      }
+
+      .reveal-content {
+        padding-top: 1rem;
+      }
+
+      .typing-headline {
+        font-size: 1.5rem;
+        padding-right: 3rem;
       }
     }
 
@@ -7483,11 +7496,13 @@
                   {question.domain}
                 </span>
               </div>
-              <ProgressBar current={questionNumber} total={totalQuestions} />
+              <div className="hidden md:block">
+                <ProgressBar current={questionNumber} total={totalQuestions} />
+              </div>
             </div>
           </div>
 
-          <div className="flex-1 flex items-center justify-center px-6 py-8">
+          <div className="flex-1 flex items-center justify-center px-6 py-8 pb-24 md:pb-8">
             <div className="max-w-2xl w-full animate-fade-in">
               <div className="mb-6 text-left">
                 <span className="text-sm text-gray-400 fustat">{question.skill}</span>
@@ -7540,6 +7555,17 @@
                   </div>
                 </button>
               </div>
+            </div>
+          </div>
+
+          {/* Mobile-only bottom progress bar */}
+          <div className="md:hidden fixed bottom-0 left-0 right-0 bg-[#101322]/95 backdrop-blur-sm border-t border-white/10 px-6 py-4">
+            <div className="max-w-2xl mx-auto">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-xs text-gray-400 fustat">Question {questionNumber} of {totalQuestions}</span>
+                <span className="text-xs text-gray-500 fustat">{Math.round((questionNumber / totalQuestions) * 100)}%</span>
+              </div>
+              <ProgressBar current={questionNumber} total={totalQuestions} />
             </div>
           </div>
         </div>
