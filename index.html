@@ -712,6 +712,11 @@
         padding: 0.5rem 0.75rem;
         font-size: 0.8125rem;
       }
+
+      /* Ensure screen content clears the back button on mobile */
+      .screen-content {
+        padding-top: 3.5rem;
+      }
     }
 
     /* Skip button for progressive reveal */
@@ -1297,6 +1302,15 @@
     /* ====================================
        RESULTS PAGE - NARRATIVE + CARDS
        ==================================== */
+
+    /* Mobile: Override min-h-screen for results page hero */
+    @media (max-width: 767px) {
+      .min-h-screen.flex.flex-col.justify-center.items-center {
+        min-height: auto;
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+      }
+    }
 
     .results-section {
       margin-bottom: 5rem;
@@ -7411,7 +7425,7 @@
             </button>
           )}
 
-          <div className="px-6 py-4 border-b border-white/10">
+          <div className="px-6 py-4 pt-16 md:pt-4 border-b border-white/10">
             <div className="max-w-2xl mx-auto">
               <div className="flex justify-between items-center mb-3">
                 <span className="text-sm text-gray-400 fustat">
